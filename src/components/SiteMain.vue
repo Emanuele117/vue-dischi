@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container container2">
     <div class="row">
       <div class="col-md-3" v-for="response in responses" :key="response.id">
         <div class="music">
@@ -26,7 +26,8 @@ export default {
       .get("https://flynn.boolean.careers/exercises/api/array/music")
       .then((r) => {
         console.log(r.data);
-        this.responses = r.data;
+        this.responses = r.data.response;
+        console.log(r.data.response);
       })
       .catch((e) => {
         console.log(e, "OPS");
@@ -35,5 +36,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.container2 {
+  background-color: #1e2d3b;
+  height: 500px;
+}
 </style>
