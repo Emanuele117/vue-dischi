@@ -1,6 +1,6 @@
 <template>
   <div class="container container2">
-    <selectMusic />
+    <selectMusic @select-music="select" />
     <div class="row">
       <div
         class="col-md-3 col_music"
