@@ -22,7 +22,9 @@ export default {
     genres: [],
   },
   data() {
-    return {};
+    return {
+      select: "",
+    };
   },
 };
 </script>

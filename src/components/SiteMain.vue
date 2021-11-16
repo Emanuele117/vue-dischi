@@ -25,6 +25,7 @@ export default {
   components: {
     selectMusic,
   },
+  methods: {},
 
   data() {
     return {
