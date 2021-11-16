@@ -1,5 +1,6 @@
 <template>
   <div class="container container2">
+    <selectMusic />
     <div class="row">
       <div
         class="col-md-3 col_music"
@@ -19,7 +20,11 @@
 
 <script>
 import axios from "axios";
+import selectMusic from "./selectMusic.vue";
 export default {
+  components: {
+    selectMusic,
+  },
   data() {
     return {
       responses: [],
