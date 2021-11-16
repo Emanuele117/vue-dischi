@@ -1,6 +1,6 @@
 <template>
   <div class="container container2">
-    <selectMusic @select-music="select" />
+    <selectMusic @select-music="select" :genres="genres" />
     <div class="row">
       <div
         class="col-md-3 col_music"
@@ -25,9 +25,11 @@ export default {
   components: {
     selectMusic,
   },
+
   data() {
     return {
       responses: [],
+      genres: [],
     };
   },
   mounted() {
@@ -36,7 +38,12 @@ export default {
       .then((r) => {
         console.log(r.data);
         this.responses = r.data.response;
-        console.log(r.data.response);
+        this.responses.forEach((album) => {
+          console.log(album.genre);
+          if (!this.genres.includes(album.genre)) {
+            this.genres.push(album.genre);
+          }
+        });
       })
       .catch((e) => {
         console.log(e, "OPS");

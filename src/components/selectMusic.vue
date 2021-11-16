@@ -4,19 +4,27 @@
     <select
       name="musics"
       id="musics"
-      v-model="filter"
-      @change.prevent="$emit('select-music', filter)"
+      v-model="select"
+      @change.prevent="$emit('select', select)"
     >
-      <option value="Rock">Rock</option>
-      <option value="Pop">Pop</option>
-      <option value="Jazz">Jazz</option>
-      <option value="Metal">Metal</option>
+      <option value="all">All</option>
+      <option value="genre" v-for="(genre, index) in genres" :key="index">
+        {{ genre }}
+      </option>
     </select>
   </form>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "selectMusic",
+  props: {
+    genres: [],
+  },
+  data() {
+    return {};
+  },
+};
 </script>
 
 <style>
