@@ -2,12 +2,12 @@
   <form action="">
     <label for="musics">Choose a genre: </label>
     <select
-      name="musics"
+      name="genre"
       id="musics"
-      v-model="select"
-      @change.prevent="$emit('select', select)"
+      v-model="genreSearch"
+      @change.prevent="$emit('select-genre', genreSearch)"
     >
-      <option value="all">All</option>
+      <option value="">All</option>
       <option value="genre" v-for="(genre, index) in genres" :key="index">
         {{ genre }}
       </option>
@@ -23,7 +23,7 @@ export default {
   },
   data() {
     return {
-      select: "",
+      genreSearch: "",
     };
   },
 };

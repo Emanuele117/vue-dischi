@@ -1,6 +1,6 @@
 <template>
   <div class="container container2">
-    <selectMusic @select-music="select" :genres="genres" />
+    <selectMusic @select-genre="setGenre" :genres="getGenres" />
     <div class="row">
       <div
         class="col-md-3 col_music"
@@ -25,7 +25,34 @@ export default {
   components: {
     selectMusic,
   },
-  methods: {},
+  methods: {
+    setGenre(genre) {
+      this.genre = genre;
+    },
+  },
+  computed: {
+    getGenres() {
+      let genres = [];
+      this.responses.forEach((response) => {
+        if (!genres.includes(response.genre)) {
+          genres.push(response.genre);
+        }
+      });
+      return genres;
+    },
+    filterDisks() {
+      if (this.genres === "") {
+        return this.responses;
+      } else if (this.genres !== "") {
+        return this.responses.filter(
+          (responses) => responses.genre === this.genre
+        );
+      }
+      return this.responses.filter(
+        (responses) => responses.genre === this.genre
+      );
+    },
+  },
 
   data() {
     return {
