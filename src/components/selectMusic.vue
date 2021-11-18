@@ -29,5 +29,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+label {
+  color: white;
+  margin: 5px;
+  margin-left: 35rem;
+  margin-top: 1rem;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="container container1">
-    <img src="../assets/logo.spotify.jpg" alt="" />
+    <img src="../assets/logo.spotify.jpg" class="img-logo" />
   </div>
 </template>
 
@@ -13,8 +13,9 @@ export default {};
   height: 50px;
   background-color: #000000;
 }
-img {
+.img-logo {
   height: 40px;
   margin-top: 5px;
+  filter: saturate(0);
 }
 </style>

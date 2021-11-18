@@ -84,12 +84,14 @@ export default {
 .container2 {
   background-color: #1e2d3b;
   height: 800px;
+
   .col_music {
     width: 220px;
   }
   .row {
     display: flex;
     justify-content: center;
+    margin-left: px;
   }
   .music {
     background-color: #2e3a46;
